@@ -8,7 +8,6 @@ import { ProfilePost } from "../components/ProfilePost";
 export const ProfileScreen = () => {
   return (
     <BackgroundComponent>
-      {/* <ScrollView style={{ flex: 1 }} > */}
       <View style={styles.wrapper}>
         <TouchableOpacity style={{ position: "absolute", right: 16, top: 22 }}>
           <LogoutIcon />

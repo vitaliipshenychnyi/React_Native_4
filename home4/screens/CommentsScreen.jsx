@@ -6,8 +6,8 @@ import {
   View,
   TouchableWithoutFeedback,
   Keyboard,
+  Platform,
 } from 'react-native';
-import { Text } from 'react-native';
 import { globalStyles } from '../globalStyles';
 import Comment from '../components/Comment';
 import { ArrowUp } from '../components/icons/Icons';
@@ -75,8 +75,6 @@ export const CommentsScreen = () => {
               onFocus={() => setIsOpenKeyboard(true)}
               onBlur={() => setIsOpenKeyboard(false)}
               style={{
-                // position:'absolute',
-                // bottom:0,
                 width: '100%',
                 height: 50,
                 backgroundColor: '#F6F6F6',

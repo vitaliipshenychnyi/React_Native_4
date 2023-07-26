@@ -6,14 +6,13 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
-  SafeAreaView,
   Platform,
-} from "react-native";
-import { Text } from "react-native";
-import { globalStyles } from "../globalStyles";
-import { Image } from "react-native";
-import { Camera, Location, Trash } from "../components/icons/Icons";
-import { useState } from "react";
+} from 'react-native';
+import { Text } from 'react-native';
+import { globalStyles } from '../globalStyles';
+import { Image } from 'react-native';
+import { Camera, Location, Trash } from '../components/icons/Icons';
+import { useState } from 'react';
 
 export const CreatePostsScreen = () => {
   const [isOpenKeyboard, setIsOpenKeyboard] = useState(false);
@@ -21,7 +20,7 @@ export const CreatePostsScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{
           flex: 1,
         }}
@@ -30,8 +29,8 @@ export const CreatePostsScreen = () => {
           style={[
             globalStyles.container,
             {
-              justifyContent: "flex-end",
-              paddingBottom: isOpenKeyboard? 55: 34,
+              justifyContent: 'flex-end',
+              paddingBottom: isOpenKeyboard ? 55 : 34,
               paddingLeft: 16,
               paddingRight: 16,
               paddingTop: 32,
@@ -45,9 +44,9 @@ export const CreatePostsScreen = () => {
                   width: 60,
                   height: 60,
                   borderRadius: 30,
-                  backgroundColor: "white",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  backgroundColor: 'white',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}
               >
                 <Camera />
@@ -59,7 +58,7 @@ export const CreatePostsScreen = () => {
               <TextInput
                 style={[
                   styles.input,
-                  { height: 50, fontFamily: "Roboto-Medium" },
+                  { height: 50, fontFamily: 'Roboto-Medium' },
                 ]}
                 placeholder="Назва..."
                 onFocus={() => setIsOpenKeyboard(true)}
@@ -68,12 +67,12 @@ export const CreatePostsScreen = () => {
 
               <View
                 style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   gap: 4,
                   borderBottomWidth: 1,
-                  borderColor: "#E8E8E8",
+                  borderColor: '#E8E8E8',
                   height: 50,
                   marginBottom: 32,
                 }}
@@ -86,7 +85,7 @@ export const CreatePostsScreen = () => {
                       flex: 1,
                       borderBottomWidth: 0,
                       marginBottom: 0,
-                      fontFamily: "Roboto-Regular",
+                      fontFamily: 'Roboto-Regular',
                     },
                   ]}
                   placeholder="Місцевість..."
@@ -103,15 +102,13 @@ export const CreatePostsScreen = () => {
           <TouchableOpacity>
             <View
               style={{
-                // position: "absolute",
-                // bottom: 0,
                 width: 70,
                 height: 40,
                 borderRadius: 20,
-                backgroundColor: "#F6F6F6",
-                justifyContent: "center",
-                alignItems: "center",
-                alignSelf: "center",
+                backgroundColor: '#F6F6F6',
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'center',
               }}
             >
               <Trash />
@@ -125,26 +122,26 @@ export const CreatePostsScreen = () => {
 
 const styles = StyleSheet.create({
   photoWrapper: {
-    with: "100%",
+    with: '100%',
     height: 240,
     borderWidth: 1,
-    borderColor: "#E8E8E8",
+    borderColor: '#E8E8E8',
     borderRadius: 8,
-    backgroundColor: "#F6F6F6",
+    backgroundColor: '#F6F6F6',
     marginBottom: 8,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
-    fontFamily: "Roboto-Regular",
+    fontFamily: 'Roboto-Regular',
     fontSize: 16,
     lineHeight: 18.75,
-    color: "#BDBDBD",
+    color: '#BDBDBD',
     marginBottom: 32,
   },
   input: {
     borderBottomWidth: 1,
-    borderColor: "#E8E8E8",
+    borderColor: '#E8E8E8',
     fontSize: 16,
     marginBottom: 16,
   },

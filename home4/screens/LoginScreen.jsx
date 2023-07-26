@@ -28,6 +28,7 @@ export const Login = () => {
     setSecureTextEntry(!secureTextEntry);
     navigation.navigate('Home');
   };
+  
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={globalStyles.container}>

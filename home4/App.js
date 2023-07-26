@@ -1,9 +1,10 @@
 import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Registration } from './screens/RegistrationScreen';
 import { Login } from './screens/LoginScreen';
 import { useFonts } from 'expo-font';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from './screens/HomeScreen';
 import { BackButton } from './components/BackButton';
 import { CommentsScreen } from './screens/CommentsScreen';

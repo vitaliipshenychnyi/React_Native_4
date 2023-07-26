@@ -1,13 +1,11 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ProfileScreen } from "../screens/ProfileScreen";
-import { CreatePostsScreen } from "../screens/CreatePostsScreen";
-import { PostsScreen } from "../screens/PostsScreen";
-import { UserIcon, PlusIcon, GridIcon } from "./icons/Icons";
-import { StyleSheet, View } from "react-native";
-import { HeaderLogoutButton } from "./HeaderLogoutButton";
-import { BackButton } from "./BackButton";
-import { createStackNavigator } from "@react-navigation/stack";
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ProfileScreen } from '../screens/ProfileScreen';
+import { CreatePostsScreen } from '../screens/CreatePostsScreen';
+import { PostsScreen } from '../screens/PostsScreen';
+import { PlusIcon, UserIcon, GridIcon } from '../components/icons/Icons';
+import { StyleSheet, View } from 'react-native';
+import { HeaderLogoutButton } from './HeaderLogoutButton';
+import { BackButton } from './BackButton';
 
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
@@ -16,28 +14,28 @@ const TabNavigation = () => {
       initialRouteName="Posts"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          if (route.name === "Posts") {
+          if (route.name === 'Posts') {
             return (
               <View
                 style={focused ? styles.focusedIconWrapper : styles.iconWrapper}
               >
-                <GridIcon stroke={focused ? "white" : "black"} />
+                <GridIcon stroke={focused ? 'white' : 'black'} />
               </View>
             );
-          } else if (route.name === "CreatePosts") {
+          } else if (route.name === 'CreatePosts') {
             return (
               <View
                 style={focused ? styles.focusedIconWrapper : styles.iconWrapper}
               >
-                <PlusIcon fill={focused ? "white" : "black"} />
+                <PlusIcon fill={focused ? 'white' : 'black'} />
               </View>
             );
-          } else if (route.name === "Profile") {
+          } else if (route.name === 'Profile') {
             return (
               <View
                 style={focused ? styles.focusedIconWrapper : styles.iconWrapper}
               >
-                <UserIcon stroke={focused ? "white" : "black"} />
+                <UserIcon stroke={focused ? 'white' : 'black'} />
               </View>
             );
           }
@@ -48,8 +46,8 @@ const TabNavigation = () => {
           paddingTop: 9,
           paddingLeft: 82,
           paddingRight: 82,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
         },
         headerShown: true,
         headerStyle: {
@@ -58,10 +56,10 @@ const TabNavigation = () => {
       })}
     >
       <Tab.Screen
-        name={"Posts"}
+        name={'Posts'}
         component={PostsScreen}
         options={{
-          title: "Публікації",
+          title: 'Публікації',
           headerRight: () => <HeaderLogoutButton />,
           headerStyle: {
             borderBottomWidth: 1,
@@ -69,11 +67,11 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={"CreatePosts"}
+        name={'CreatePosts'}
         component={CreatePostsScreen}
         options={{
-          title: "Створити публікацію",
-          tabBarStyle: { display: "none" },
+          title: 'Створити публікацію',
+          tabBarStyle: { display: 'none' },
           headerLeft: () => <BackButton />,
           headerStyle: {
             borderBottomWidth: 1,
@@ -81,7 +79,7 @@ const TabNavigation = () => {
         }}
       />
       <Tab.Screen
-        name={"Profile"}
+        name={'Profile'}
         component={ProfileScreen}
         options={{
           headerShown: false,
@@ -96,15 +94,15 @@ const styles = StyleSheet.create({
   iconWrapper: {
     width: 40,
     height: 40,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   focusedIconWrapper: {
-    backgroundColor: "#FF6C00",
+    backgroundColor: '#FF6C00',
     width: 70,
     height: 40,
     borderRadius: 20,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
